@@ -1,0 +1,26 @@
+git checkout master
+git add adding.txt
+git commit -m "empty file to master"
+git branch first
+git checkout first
+set /p A = "first digit = ";
+echo %A% > adding.txt
+git add adding.txt
+git commit -m "first digit to first branch"
+git branch second
+git checkout second
+set /p B = "second digit = ";
+echo %B% > adding.txt
+git add adding.txt
+git commit -m "second digit to second branch"
+git branch rez
+git checkout rez
+set /A C=A+B
+echo %C% > adding.txt
+git add adding.txt
+git commit -m "rez to rez branch"
+git checkout master
+git merge first
+git merge second
+git merge rez
+
