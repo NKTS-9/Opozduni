@@ -1,0 +1,28 @@
+create table recipe(number integer primary key not null, author varchar(20), title varchar(25), difficulty integer);
+insert into recipe(number, author, title, difficulty) values(1, 'Блюменталь', 'Седло барашка', 4);
+insert into recipe(number, author, title, difficulty) values(2, 'Дюкасс', 'Тартины с инжиром', 6);
+insert into recipe(number, author, title, difficulty) values(3, 'Оливер', 'Торт Колибри', 7);
+insert into recipe(number, author, title, difficulty) values(4, 'Рамзи', 'Стейк Диана', 8); 
+insert into recipe(number, author, title, difficulty) values(5, 'Дюкасс', 'Тартины с лососем', 6);
+select * from recipe;
+
+select * from recipe where difficulty>6;
+select title, difficulty from recipe;
+select title, difficulty from recipe where difficulty>6;
+
+select * from recipe order by number;
+select * from recipe order by author;
+select * from recipe order by title DESC;
+select number, author, difficulty from recipe where difficulty>6 order by author DESC;
+
+insert into recipe(number, author, title, difficulty) values(6, 'Пак', 'Австрийская пицца', 6);
+select * from recipe;
+
+update recipe set title='Тартины с инжиром' where author='Ким';
+select * from recipe;
+
+select distinct difficulty from recipe;
+select count(difficulty) from recipe where difficulty=6;
+select count(author) from recipe;
+delete from recipe where author='Пак';
+select * from recipe;
