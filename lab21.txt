@@ -1,0 +1,400 @@
+
+C:\Users\go>git config --list --show-origin
+file:C:/Program Files/Git/etc/gitconfig diff.astextplain.textconv=astextplain
+file:C:/Program Files/Git/etc/gitconfig filter.lfs.clean=git-lfs clean -- %f
+file:C:/Program Files/Git/etc/gitconfig filter.lfs.smudge=git-lfs smudge -- %f
+file:C:/Program Files/Git/etc/gitconfig filter.lfs.process=git-lfs filter-process
+file:C:/Program Files/Git/etc/gitconfig filter.lfs.required=true
+file:C:/Program Files/Git/etc/gitconfig http.sslbackend=openssl
+file:C:/Program Files/Git/etc/gitconfig http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+file:C:/Program Files/Git/etc/gitconfig core.autocrlf=true
+file:C:/Program Files/Git/etc/gitconfig core.fscache=true
+file:C:/Program Files/Git/etc/gitconfig core.symlinks=false
+file:C:/Program Files/Git/etc/gitconfig core.editor="C:\\Program Files (x86)\\Notepad++\\notepad++.exe" -multiInst -notabbar -nosession -noPlugin
+file:C:/Program Files/Git/etc/gitconfig pull.rebase=false
+file:C:/Program Files/Git/etc/gitconfig credential.helper=manager-core
+file:C:/Program Files/Git/etc/gitconfig credential.https://dev.azure.com.usehttppath=true
+file:C:/Program Files/Git/etc/gitconfig init.defaultbranch=master
+file:C:/Users/go/.gitconfig     gui.recentrepo=D:/git/lab1
+file:C:/Users/go/.gitconfig     user.email=determaer2012@gmail.com
+file:C:/Users/go/.gitconfig     user.name=determaer
+file:.git/config        core.repositoryformatversion=0
+file:.git/config        core.filemode=false
+file:.git/config        core.bare=false
+file:.git/config        core.logallrefupdates=true
+file:.git/config        core.symlinks=false
+file:.git/config        core.ignorecase=true
+
+C:\Users\go>git config --global user.name "usver"
+
+C:\Users\go>git config --global user.email usver@mail.ru
+
+C:\Users\go>ls desktop
+"ls" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+C:\Users\go>cd desktop
+
+C:\Users\go\Desktop>cd lab21
+
+C:\Users\go\Desktop\lab21>git init
+Initialized empty Git repository in C:/Users/go/Desktop/lab21/.git/
+
+C:\Users\go\Desktop\lab21>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        readme.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\go\Desktop\lab21>git add readme.txt
+
+C:\Users\go\Desktop\lab21>git status -s
+A  readme.txt
+
+C:\Users\go\Desktop\lab21>git status-s
+git: 'status-s' is not a git command. See 'git --help'.
+
+C:\Users\go\Desktop\lab21>git status -s
+AM readme.txt
+
+C:\Users\go\Desktop\lab21>git diff
+diff --git a/readme.txt b/readme.txt
+index 95d09f2..38be0e0 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -1 +1,2 @@
+-hello world
+\ No newline at end of file
++hello world
++volvo 940
+\ No newline at end of file
+
+C:\Users\go\Desktop\lab21>git add readme.txt
+
+C:\Users\go\Desktop\lab21>git status -s
+A  readme.txt
+
+C:\Users\go\Desktop\lab21>git diff
+
+C:\Users\go\Desktop\lab21>git diff-staged
+git: 'diff-staged' is not a git command. See 'git --help'.
+
+C:\Users\go\Desktop\lab21>git diff -staged
+error: invalid option: -staged
+
+C:\Users\go\Desktop\lab21>git diff --staged
+diff --git a/readme.txt b/readme.txt
+new file mode 100644
+index 0000000..38be0e0
+--- /dev/null
++++ b/readme.txt
+@@ -0,0 +1,2 @@
++hello world
++volvo 940
+\ No newline at end of file
+
+C:\Users\go\Desktop\lab21>git diff --staged
+diff --git a/readme.txt b/readme.txt
+new file mode 100644
+index 0000000..38be0e0
+--- /dev/null
++++ b/readme.txt
+@@ -0,0 +1,2 @@
++hello world
++volvo 940
+\ No newline at end of file
+
+C:\Users\go\Desktop\lab21>git add readme.txt
+
+C:\Users\go\Desktop\lab21>git diff --staged
+diff --git a/readme.txt b/readme.txt
+new file mode 100644
+index 0000000..17c64a8
+--- /dev/null
++++ b/readme.txt
+@@ -0,0 +1,3 @@
++hello world
++volvo 940
++saab 9000
+\ No newline at end of file
+
+C:\Users\go\Desktop\lab21>git commit -m "volvo kruto"
+[master (root-commit) 5e592b5] volvo kruto
+ 1 file changed, 3 insertions(+)
+ create mode 100644 readme.txt
+
+C:\Users\go\Desktop\lab21>
+C:\Users\go\Desktop\lab21>git log
+commit 5e592b5f0d87996bf6a9ea092ea6e6beb9e20141 (HEAD -> master)
+Author: usver <usver@mail.ru>
+Date:   Tue Jun 15 14:31:11 2021 +0300
+
+    volvo kruto
+
+C:\Users\go\Desktop\lab21>git add readme.txt
+
+C:\Users\go\Desktop\lab21>git commit -m "volvo klass"
+[master 786f905] volvo klass
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+C:\Users\go\Desktop\lab21>git commit --amend
+[master c05697d] volvo klass
+ Date: Tue Jun 15 14:32:21 2021 +0300
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+C:\Users\go\Desktop\lab21>git add readme.txt
+
+C:\Users\go\Desktop\lab21>git commit -m "3 time"
+[master 7e28ee6] 3 time
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\go\Desktop\lab21>git add readme.txt
+
+C:\Users\go\Desktop\lab21>git reset HEAD readme.txt
+Unstaged changes after reset:
+M       readme.txt
+
+C:\Users\go\Desktop\lab21>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\go\Desktop\lab21>git add readme.txt
+
+C:\Users\go\Desktop\lab21>git commit -m "4 time"
+[master 14ffa97] 4 time
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+C:\Users\go\Desktop\lab21>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\go\Desktop\lab21>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\go\Desktop\lab21>git add readme.txt
+
+C:\Users\go\Desktop\lab21>git status -s
+M  readme.txt
+
+C:\Users\go\Desktop\lab21>git checkout -- file
+error: pathspec 'file' did not match any file(s) known to git
+
+C:\Users\go\Desktop\lab21>git checkout -- readme.txt
+
+C:\Users\go\Desktop\lab21>git status -s
+M  readme.txt
+
+C:\Users\go\Desktop\lab21>git log --pretty=format:"%an %s %h"
+usver 4 time 14ffa97
+usver 3 time 7e28ee6
+usver volvo klass c05697d
+usver volvo kruto 5e592b5
+
+C:\Users\go\Desktop\lab21>git add 1.txt
+
+C:\Users\go\Desktop\lab21>git add 2.txt
+
+C:\Users\go\Desktop\lab21>git commit -m "5 time"
+[master 69aaf1e] 5 time
+ 3 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 1.txt
+ create mode 100644 2.txt
+
+C:\Users\go\Desktop\lab21>git branch name
+
+C:\Users\go\Desktop\lab21>git checkout name
+Switched to branch 'name'
+
+C:\Users\go\Desktop\lab21>git add 2.txt
+
+C:\Users\go\Desktop\lab21>git commit -m "6 time"
+[name 856ec4e] 6 time
+ 1 file changed, 1 insertion(+)
+
+C:\Users\go\Desktop\lab21>git commit --amend
+[name 027c6dd] 5 time
+ Date: Tue Jun 15 14:45:57 2021 +0300
+ 1 file changed, 1 insertion(+)
+
+C:\Users\go\Desktop\lab21>git status
+On branch name
+nothing to commit, working tree clean
+
+C:\Users\go\Desktop\lab21>git log --pretty=format:"%an %s %h"
+usver 5 time 027c6dd
+usver 5 time 69aaf1e
+usver 4 time 14ffa97
+usver 3 time 7e28ee6
+usver volvo klass c05697d
+usver volvo kruto 5e592b5
+
+C:\Users\go\Desktop\lab21>git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+C:\Users\go\Desktop\lab21>git checkout master
+Switched to branch 'master'
+
+C:\Users\go\Desktop\lab21>git add 1.txt
+
+C:\Users\go\Desktop\lab21>git commit -m "6 time"
+[master 24f264f] 6 time
+ 1 file changed, 1 insertion(+)
+
+C:\Users\go\Desktop\lab21>git log --pretty=format:"%an %s %h"
+usver 6 time 24f264f
+usver 5 time 69aaf1e
+usver 4 time 14ffa97
+usver 3 time 7e28ee6
+usver volvo klass c05697d
+usver volvo kruto 5e592b5
+
+C:\Users\go\Desktop\lab21>git checkout name
+Switched to branch 'name'
+
+C:\Users\go\Desktop\lab21>git branch test2
+
+C:\Users\go\Desktop\lab21>git add 2.txt
+
+C:\Users\go\Desktop\lab21>git commit -m "7 time"
+On branch name
+nothing to commit, working tree clean
+
+C:\Users\go\Desktop\lab21>git checkout test2
+Switched to branch 'test2'
+M       2.txt
+
+C:\Users\go\Desktop\lab21>git commit -m "7 time"
+On branch test2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\go\Desktop\lab21>git add 2.txt
+
+C:\Users\go\Desktop\lab21>git commit -m "7 time"
+[test2 f14ee04] 7 time
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\go\Desktop\lab21>git checkout name
+Switched to branch 'name'
+
+C:\Users\go\Desktop\lab21>git add 3.txt
+
+C:\Users\go\Desktop\lab21>git commit -m "8 time"
+[name 619ab01] 8 time
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 3.txt
+
+C:\Users\go\Desktop\lab21>checkout test2
+"checkout" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+C:\Users\go\Desktop\lab21>git checkout test2
+Switched to branch 'test2'
+
+C:\Users\go\Desktop\lab21>git add 2.txt
+
+C:\Users\go\Desktop\lab21>git commit -m "9 time"
+[test2 dd89521] 9 time
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\go\Desktop\lab21>git checkout name
+Switched to branch 'name'
+
+C:\Users\go\Desktop\lab21>git merge test2
+Merge made by the 'recursive' strategy.
+ 2.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\go\Desktop\lab21>git branch -d test2
+Deleted branch test2 (was dd89521).
+
+C:\Users\go\Desktop\lab21>git checkout master
+Switched to branch 'master'
+
+C:\Users\go\Desktop\lab21>git merge name
+Merge made by the 'recursive' strategy.
+ 2.txt | 1 +
+ 3.txt | 0
+ 2 files changed, 1 insertion(+)
+ create mode 100644 3.txt
+
+C:\Users\go\Desktop\lab21>git commit -m "10 time"
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\go\Desktop\lab21>git log --pretty=format:"%an %s %h"
+usver Merge branch 'name' 6c91dd5
+usver Merge branch 'test2' into name 33072a7
+usver 9 time dd89521
+usver 8 time 619ab01
+usver 7 time f14ee04
+usver 6 time 24f264f
+usver 5 time 027c6dd
+usver 5 time 69aaf1e
+usver 4 time 14ffa97
+usver 3 time 7e28ee6
+usver volvo klass c05697d
+usver volvo kruto 5e592b5
+
+C:\Users\go\Desktop\lab21>git checkout 6c91dd5
+Note: switching to '6c91dd5'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 6c91dd5 Merge branch 'name'
+
+C:\Users\go\Desktop\lab21>git checkout -b test3 6c91dd5
+Switched to a new branch 'test3'
+
+C:\Users\go\Desktop\lab21>git commit -m "11 time"
+On branch test3
+nothing to commit, working tree clean
+
+C:\Users\go\Desktop\lab21>git log --pretty=format:"%an %s %h"
+usver Merge branch 'name' 6c91dd5
+usver Merge branch 'test2' into name 33072a7
+usver 9 time dd89521
+usver 8 time 619ab01
+usver 7 time f14ee04
+usver 6 time 24f264f
+usver 5 time 027c6dd
+usver 5 time 69aaf1e
+usver 4 time 14ffa97
+usver 3 time 7e28ee6
+usver volvo klass c05697d
+usver volvo kruto 5e592b5
+
+C:\Users\go\Desktop\lab21>
